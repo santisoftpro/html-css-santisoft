@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+:root {
+    --primary: #814bff;
+    --secondary: #F4EBFF;
+    --text-primary: #101828;
+    --text-secondary: #667085;
+    --badge-bg: #ECFDF3;
+    --badge-text: #027A48;
+    --white: #fff;
+    --dropdown-bg: rgb(252, 253, 251);
+    --shadow: rgba(32, 7, 65, 0.14);
+    --container: 124rem;
+    --nav-height: 7rem;
+    --black-text: #000;
+}
+
+html {
+    font-family: 'Inter', sans-serif;
+    font-size: 62.5%;
+    font-style: normal;
+}
+
+body {
+    font-size: 1.6rem;
+
+}
+
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--nav-height);
+    position: relative;
+    background: var(--white);
+    width: 100%;
+
+}
+
+.logo-img {
+    width: 200px;
+    height: 60px;
+
+}
+
+.nav_list {
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+    margin: 0 1.5rem;
+
+}
+
+.nav_action {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav_link,
+.btn {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.btn-primary {
+    display: inline-flex;
+    color: var(--black-text);
+    background: var(--white);
+    font-weight: 500;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.8rem;
+    border: 2px solid #000;
+}
+
+.nav_toggle {
+    cursor: pointer;
+    display: none;
+}
+
+.nav_toggle ion-icon {
+    font-size: 3.5rem;
+    color: var(--text-primary);
+}
+
+.dropdown {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    background: var(--dropdown-bg);
+    box-shadow: 0rem 0.2rem 0.5rem var(--shadow);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: all 0.5s ease-in;
+}
+
+.dropdown-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.nav_list_menu:hover ion-icon {
+    transition: all 0.5s ease-in;
+    transform: rotate(180deg);
+}
+
+.nav_list_menu:hover .dropdown {
+    clip-path: polygon(0 0, 100% 0, 100% 102%, 0 102%);
+}
+
+.item-list {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem 0;
+}
+
+.item-img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--secondary);
+}
+
+.item-list-info {
+    position: relative;
+    width: 100%;
+}
+
+.info-badge {
+    position: absolute;
+    right: 1rem;
+    top: 0;
+    background: var(--badge-bg);
+    padding: 0.1rem 0.5rem;
+    border-radius: 1rem;
+    color: var(--badge-text);
+}
+
+@media (max-width:730px) {
+    .nav_toggle {
+        display: block;
+    }
+
+    .nav_menu {
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        background: var(--dropdown-bg);
+        display: none;
+    }
+
+    .nav_menu.active {
+        display: block;
+    }
+
+    .nav_list {
+        display: block;
+        margin: 2rem 0;
+        text-align: center;
+    }
+
+    .nav_link {
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .dropdown {
+        top: 0;
+        position: relative;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        box-shadow: none;
+        height: 0;
+        text-align: start;
+        transition: all 0.5s ease-in;
+    }
+
+    .nav_list_menu:hover .dropdown {
+        height: 100%;
+        transition: all 0.5s ease-in;
+    }
+}
+
+@media (max-width:365px) {
+    .logo-img {
+        width: 10rem;
+    }
+
+    .btn,
+    .btn-primary {
+        padding: 0.4rem 1rem;
+    }
+}
+
+/* end of mega menu */
+
+
+#body-section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* background-color: whitesmoke; */
+}
+
+
+
+#body-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(45deg, #ff0081, #6827b0); */
+    background: url("images/fotis-fotopoulos-LJ9KY8pIH3E-unsplash.jpg") fixed;
+    background-position: center;
+    background-size: cover;
+    border-radius: 0 0 50% 50%/0 0 100% 100%;
+    transform: scaleX(1.5);
+}
+
+#body-section .content {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    max-width: 900px;
+    text-align: center;
+
+}
+
+#body-section .body-text {
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    justify-content: center;
+    padding-bottom: 30px;
+    margin-bottom: 120px;
+}
+
+#body-section .content h2 {
+
+    padding: 0;
+    color: var(--secondary);
+    font-size: 8em;
+    margin-bottom: 10px;
+}
+
+#body-section .content p {
+
+    color: #fff;
+    font-size: 1.2em;
+}
+
+#body-section .box-content {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+
+
+
+}
+
+#body-section .box-item {
+    background-color: #F4EBFF;
+    width: 25%;
+    height: 200px;
+    margin-top: 470px;
+    position: relative;
+
+
+}
